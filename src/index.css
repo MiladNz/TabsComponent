@@ -15,6 +15,9 @@ h1 {
   color: #dedede;
   padding: 2rem;
 }
+h3 {
+  font-size: 2.4rem;
+}
 
 button {
   padding: 1rem 3rem;
@@ -28,6 +31,7 @@ button {
   text-align: right;
 }
 button:hover {
-  border-bottom: 2px solid #e3cd08;
-  color: #e3cd08;
+  border-bottom: 2px solid #fcf306;
+  color: #fcf306;
+  font-weight: 700;
 }

@@ -1,4 +1,3 @@
-import "./App.css";
 import TabsComponent from "./TabsComponent";
 
 function App() {

@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.tabs-container {
+  background-color: oklch(0.685 0.169 237.323);
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 10vh;
+}
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tabs-content {
+  background-color: oklch(0.588 0.158 241.966);
+  color: #dedede;
+  padding: 2.5rem 2rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.tabs-content p {
+  font-size: 1.8rem;
+  padding-top: 2rem;
+}

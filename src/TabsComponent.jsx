@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import "./TabsComponent.css";
 function TabsComponent({ tabs }) {
   const getCurrentTab = () => {
     return JSON.parse(localStorage.getItem("clickedTab")) || tabs[0];
