@@ -20,7 +20,6 @@ function App() {
   ];
 
   const getCurrentTab = () => {
-    // return localStorage.getItem("clickedTab") || tabs[0].title;
     return localStorage.getItem("clickedTab")
       ? JSON.parse(localStorage.getItem("clickedTab"))
       : tabs[0];
@@ -41,13 +40,13 @@ function App() {
       <h1>Tabs Component with React</h1>
       <div className="tabs-container">
         {tabs.map((tab) => (
-          <button key={tab.title} onClick={() => setActiveTab(tab.title)}>
+          <button key={tab.title} onClick={() => setActiveTab(tab)}>
             {tab.title}
           </button>
         ))}
       </div>
       <div className="tabs-content">
-        <h3>{`Content ${activeTab[4]}`}</h3>
+        <h3>{`Content ${activeTab.title.split(" ")[1]}`}</h3>
         <p>{activeTab.content}</p>
       </div>
     </div>
