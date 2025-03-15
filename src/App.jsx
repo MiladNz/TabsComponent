@@ -10,47 +10,45 @@ function App() {
     },
     {
       title: "TAB 2",
-      content: "Here is what you see in Tab 2",
+      content: "This is the content for Tab 2",
     },
-    { title: "TAB 3", content: "Tab 3 holds its own unique content" },
+    { title: "TAB 3", content: "This is the content for Tab 3" },
     {
       title: "TAB 4",
-      content: "Finally, this is the content for Tab 4",
+      content: "This is the content for Tab 4",
     },
   ];
 
   const getCurrentTab = () => {
-    return localStorage.getItem("clickedTab") || tabs[0].title;
+    // return localStorage.getItem("clickedTab") || tabs[0].title;
+    return localStorage.getItem("clickedTab")
+      ? JSON.parse(localStorage.getItem("clickedTab"))
+      : tabs[0];
   };
 
-  const getCurrentTabContent = () => {
-    return tabs.find((tab) => tab.title === activeTab);
-  };
+  // const getCurrentTabContent = () => {
+  //   return tabs.find((tab) => tab.title === activeTab);
+  // };
 
   const [activeTab, setActiveTab] = useState(getCurrentTab);
 
   useEffect(() => {
-    localStorage.setItem("clickedTab", activeTab);
+    localStorage.setItem("clickedTab", JSON.stringify(activeTab));
   }, [activeTab]);
 
   return (
     <div>
       <h1>Tabs Component with React</h1>
-      <div className="tab-container">
+      <div className="tabs-container">
         {tabs.map((tab) => (
-          <button key={tab} onClick={() => setActiveTab(tab)}>
-            {tab}
+          <button key={tab.title} onClick={() => setActiveTab(tab.title)}>
+            {tab.title}
           </button>
         ))}
       </div>
       <div className="tabs-content">
-        <h3>{`Content ${tabs.indexOf(activeTab) + 1}`}</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-          illum dolores alias quo fugit vero incidunt quaerat praesentium
-          temporibus qui corporis eum explicabo ipsa aspernatur officia,
-          dignissimos eligendi eos nemo!
-        </p>
+        <h3>{`Content ${activeTab[4]}`}</h3>
+        <p>{activeTab.content}</p>
       </div>
     </div>
   );
