@@ -1,6 +1,5 @@
-import { useState } from "react";
 import "./App.css";
-import { useEffect } from "react";
+import TabsComponent from "./TabsComponent";
 
 function App() {
   const tabs = [
@@ -19,36 +18,9 @@ function App() {
     },
   ];
 
-  const getCurrentTab = () => {
-    return localStorage.getItem("clickedTab")
-      ? JSON.parse(localStorage.getItem("clickedTab"))
-      : tabs[0];
-  };
-
-  // const getCurrentTabContent = () => {
-  //   return tabs.find((tab) => tab.title === activeTab);
-  // };
-
-  const [activeTab, setActiveTab] = useState(getCurrentTab);
-
-  useEffect(() => {
-    localStorage.setItem("clickedTab", JSON.stringify(activeTab));
-  }, [activeTab]);
-
   return (
     <div>
-      <h1>Tabs Component with React</h1>
-      <div className="tabs-container">
-        {tabs.map((tab) => (
-          <button key={tab.title} onClick={() => setActiveTab(tab)}>
-            {tab.title}
-          </button>
-        ))}
-      </div>
-      <div className="tabs-content">
-        <h3>{`Content ${activeTab.title.split(" ")[1]}`}</h3>
-        <p>{activeTab.content}</p>
-      </div>
+      <TabsComponent tabs={tabs} />
     </div>
   );
 }
