@@ -17,7 +17,10 @@ function TabsComponent({ tabs }) {
         <h1>Tabs Component with React</h1>
         <div className="tabs">
           {tabs.map((tab) => (
-            <button key={tab.title} onClick={() => setActiveTab(tab)}>
+            <button
+              key={tab.title}
+              onClick={() => setActiveTab(tab)}
+              className={activeTab.title === tab.title ? "active" : ""}>
               {tab.title}
             </button>
           ))}
