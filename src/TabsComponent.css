@@ -5,13 +5,14 @@
 }
 
 .tabs-container {
-  background-color: oklch(0.685 0.169 237.323);
   display: flex;
   flex-direction: column;
   flex: 0 0 10vh;
+  background-color: oklch(0.685 0.169 237.323);
 }
 .tabs {
   display: flex;
+  margin-top: 2.5rem;
 }
 .tabs-content {
   background-color: oklch(0.588 0.158 241.966);
@@ -27,8 +28,9 @@
 button {
   padding: 1rem 3.5rem;
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: bold;
   font-family: inherit;
+  letter-spacing: 0.1em;
   color: #f5f3f3;
   cursor: pointer;
   border: none;
@@ -37,12 +39,12 @@ button {
   border-top-right-radius: 5px;
 }
 button:hover {
-  color: #fcf306;
-  border-bottom: 3px solid #fcf306;
+  color: #facc15;
+  border-bottom: 3px solid #facc15;
   transition: all 0.4s ease;
 }
 .active {
-  color: #fcf306;
+  color: #facc15;
   font-weight: 700;
   background-color: oklch(0.588 0.158 241.966);
   transition: all 0.6s ease;
@@ -61,8 +63,14 @@ button:hover {
   button {
     padding: 1rem 2.5rem;
   }
+  .tabs {
+    align-items: flex-start;
+  }
   .tabs-content p {
     font-size: 1.4rem;
+  }
+  .active {
+    transform: scale(1.1);
   }
 }
 
