@@ -13,7 +13,6 @@
 .tabs {
   display: flex;
 }
-
 .tabs-content {
   background-color: oklch(0.588 0.158 241.966);
   color: #f5f3f3;
@@ -21,31 +20,55 @@
   flex: 1;
   overflow-y: auto;
 }
-
 .tabs-content p {
   font-size: 1.8rem;
   padding-top: 2rem;
 }
-
 button {
-  padding: 1rem 3rem;
-  font-size: 1.3rem;
+  padding: 1rem 3.5rem;
+  font-size: 1.4rem;
   font-weight: 500;
   font-family: inherit;
   color: #f5f3f3;
   cursor: pointer;
   border: none;
   background-color: inherit;
-  text-align: right;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 button:hover {
   color: #fcf306;
   border-bottom: 3px solid #fcf306;
+  transition: all 0.4s ease;
 }
 .active {
   color: #fcf306;
   font-weight: 700;
   background-color: oklch(0.588 0.158 241.966);
+  transition: all 0.6s ease;
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  button {
+    padding: 1rem 3rem;
+  }
+  .tabs-content p {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 640px) {
+  button {
+    padding: 1rem 2.5rem;
+  }
+  .tabs-content p {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+  }
 }
